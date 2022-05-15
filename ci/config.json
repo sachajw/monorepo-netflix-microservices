@@ -2,18 +2,18 @@ pipeline {
     agent none
     stages {
         stage('Build Gateway') {
-            agent { dockerfile true }
+            agent {docker { image 'netflix-api-gateway' }}
             when {
                 changeset "**/gateway/*.*"
                 beforeAgent true
             }
             steps {
                 dir('gateway')
-                  sh 'entrypoint.sh'
-                  sh '...'
+                sh 'entrypoint.sh'
+                sh '...'
         }
         stage('Build Category') {
-            agent { dockerfile true }
+            agent {docker { image 'netflix-category-microservice' }}
             when {
                 changeset "**/category/*.*"
                 beforeAgent true
@@ -24,7 +24,7 @@ pipeline {
                 sh '...'
         }
         stage('Build Config') {
-            agent { dockerfile true }
+            agent {docker { image 'netflix-config' }}
             when {
                 changeset "**/config/*.*"
                 beforeAgent true
@@ -35,46 +35,46 @@ pipeline {
                 SH '...'
         }
         stage('Build Data') {
-            agent { dockerfile true }
+            agent {docker { image 'netflix-data' }}
             when {
                 changeset "**/data/*.*"
                 beforeAgent true
         }
             steps {
-                dir('gateway')
+                dir('data')
                 sh 'entrypoint.sh'
                 sh '...'
         }
         stage('Build Movie') {
-            agent { dockerfile true }
+            agent {docker { image 'netflix-movie' }}
             when {
                 changeset "**/movie/*.*"
                 beforeAgent true
         }
             steps {
-                dir('gateway')
+                dir('movie')
                 sh 'entrypoint.sh'
                 sh '...'
         }
         stage('Build Service') {
-            agent { dockerfile true }
+            agent {docker { image 'netflix-service' }}
             when {
                 changeset "**/service/*.*"
                 beforeAgent true
         }
             steps {
-                dir('gateway')
+                dir('service')
                 sh 'entrypoint.sh'
                 sh '...'
         }
         stage('Build User') {
-            agent { dockerfile true }
+            agent {docker { image 'netflix-user' }}
             when {
                 changeset "**/user/*.*"
                 beforeAgent true
         }
             steps {
-                dir('gateway')
+                dir('user')
                 sh 'entrypoint.sh'
                 sh '...'
         }
