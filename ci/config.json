@@ -9,7 +9,6 @@ pipeline {
             }
         }
         stage('Category') {
-            agent {
             agent { dockerfile true }
             }
             steps {
@@ -17,7 +16,6 @@ pipeline {
             }
         }
         stage('Config') {
-            agent {
             agent { dockerfile true }
             }
             steps {
@@ -25,7 +23,6 @@ pipeline {
             }
         }
         stage('Data') {
-            agent {
             agent { dockerfile true }
             }
             steps {
@@ -33,7 +30,6 @@ pipeline {
             }
         }
         stage('Movie') {
-            agent {
             agent { dockerfile true }
             }
             steps {
@@ -41,7 +37,6 @@ pipeline {
             }
         }
         stage('Service') {
-            agent {
             agent { dockerfile true }
             }
             steps {
@@ -49,7 +44,6 @@ pipeline {
             }
         }
         stage('User') {
-            agent {
             agent { dockerfile true }
             }
             steps {
