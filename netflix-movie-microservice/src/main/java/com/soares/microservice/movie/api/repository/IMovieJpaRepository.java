@@ -6,7 +6,7 @@ import com.soares.microservice.commons.entity.MovieEntity;
 
 /**
  * Repository class for {@link MovieEntity}
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */

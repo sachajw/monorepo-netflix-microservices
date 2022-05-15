@@ -8,7 +8,7 @@ import com.soares.microservice.commons.dto.MovieDTO;
 
 /**
  * Movie service interface
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
@@ -21,7 +21,7 @@ public interface IMovieService {
 	 * @return
 	 */
 	MovieDTO insert(MovieDTO movie);
-	
+
 	/**
 	 * Update a movie
 	 * @param movie
@@ -34,13 +34,13 @@ public interface IMovieService {
 	 * @return
 	 */
 	public List<MovieDTO> getAll();
-	
+
 	/**
 	 * Get a movie by id
 	 * @return
 	 */
 	public MovieDTO findById(String id);
-	
+
 	/**
 	 * Delete a movie
 	 * @param id

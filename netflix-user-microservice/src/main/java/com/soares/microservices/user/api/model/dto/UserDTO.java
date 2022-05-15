@@ -6,14 +6,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Data Transfer Object for user
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
 public class UserDTO implements Serializable {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -21,17 +21,17 @@ public class UserDTO implements Serializable {
 	 * User id
 	 */
 	private String id;
-	
+
 	/**
 	 * First name
 	 */
 	private String firstName;
-	
+
 	/**
 	 * Last name
 	 */
 	private String lastName;
-	
+
 	/**
 	 * Email
 	 */
@@ -42,7 +42,7 @@ public class UserDTO implements Serializable {
 	 */
 	@JsonIgnore
 	private String password;
-	
+
 	/**
 	 * @return the id
 	 */

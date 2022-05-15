@@ -4,12 +4,12 @@ import javax.validation.constraints.NotNull;
 
 /**
  * This class represents a category update request
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
 public class CategoryUpdateRequestModel extends CategoryCreateRequestModel {
-	
+
 	/**
 	 * Primary key
 	 */

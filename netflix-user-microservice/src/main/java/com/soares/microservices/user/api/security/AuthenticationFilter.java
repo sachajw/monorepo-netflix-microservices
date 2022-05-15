@@ -29,24 +29,24 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 /**
  * Authentication filter
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
 public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
 	IUserService userService;
-	
+
 	private Environment env;
-	
+
 	public AuthenticationFilter(@Autowired IUserService userService, Environment env, AuthenticationManager authenticationManager) {
 
 		this.userService = userService;
 		this.env = env;
 		super.setAuthenticationManager(authenticationManager);
-		
+
 	}
-	
+
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res)
 			throws AuthenticationException {
@@ -69,15 +69,15 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 			Authentication auth) throws IOException, ServletException {
 		String userName = ((User) auth.getPrincipal()).getUsername();
 		UserDTO userDetails = userService.findByEmail(userName);
-		
-		if(userDetails == null) 
+
+		if(userDetails == null)
 			throw new UsernameNotFoundException(userName);
-		
+
 		String token = Jwts.builder()
 				.setSubject(userDetails.getId())
 				.setExpiration(new Date(System.currentTimeMillis() + Long.parseLong(env.getProperty("token.expiration_time"))))
 				.signWith(SignatureAlgorithm.HS512, env.getProperty("token.secret")).compact();
-		
+
 		res.addHeader("token", token);
 		res.addHeader("userId", userDetails.getId());
 	}

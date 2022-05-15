@@ -41,7 +41,7 @@ You can use <a href="https://www.portainer.io/">Portainer</a> to check.
 
 You can then access eureka service discovery here: <a href="#">http://localhost:8010/</a>
 
-Username: user  
+Username: user
 Password: user
 
 You will see all registered microservices as the following image:
@@ -85,13 +85,13 @@ Once you have the token, feel free to create categories and movies.
 
 Some modules reference the others by using their container name. If you want to run locally, you need to edit your /etc/hosts file to add the following entries so that the microservices can communicate with each other.
 
-127.0.0.1       netflix-config  
-127.0.0.1       netflix-service-discovery  
-127.0.0.1       netflix-api-gateway  
-127.0.0.1       netflix-user-microservice  
-127.0.0.1       netflix-category-microservice  
-127.0.0.1       netflix-movie-microservice  
-127.0.0.1       mysql-db  
+127.0.0.1       netflix-config
+127.0.0.1       netflix-service-discovery
+127.0.0.1       netflix-api-gateway
+127.0.0.1       netflix-user-microservice
+127.0.0.1       netflix-category-microservice
+127.0.0.1       netflix-movie-microservice
+127.0.0.1       mysql-db
 127.0.0.1       mongo
 
 

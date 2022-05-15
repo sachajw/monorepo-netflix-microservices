@@ -2,7 +2,7 @@ package com.soares.microservices.user.api.model.request;
 
 /**
  * Login request
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
@@ -12,7 +12,7 @@ public class LoginRequestModel {
 	 * User email
 	 */
 	private String email;
-	
+
 	/**
 	 * User password
 	 */
@@ -45,5 +45,5 @@ public class LoginRequestModel {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 }

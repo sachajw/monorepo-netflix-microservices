@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 /**
  * Movie Entity
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
@@ -23,17 +23,17 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 public class MovieEntity implements Serializable {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Primary key
 	 */
 	@Id
 	@Column(name = "id", nullable = false, unique = true)
 	private String id;
-	
+
 	/**
 	 * Movie
 	 */
@@ -89,5 +89,5 @@ public class MovieEntity implements Serializable {
 	public void setCategory(CategoryEntity category) {
 		this.category = category;
 	}
-	
+
 }

@@ -7,7 +7,7 @@ import com.soares.microservice.commons.entity.CategoryEntity;
 
 /**
  * Repository class for {@link CategoryEntity}
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */

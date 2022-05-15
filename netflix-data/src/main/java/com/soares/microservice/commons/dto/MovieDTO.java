@@ -4,17 +4,17 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 /**
  * Data Transfer Object for Movie
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
 public class MovieDTO {
-	
+
 	/**
 	 * Primary key
 	 */
 	private String id;
-	
+
 	/**
 	 * Movie title
 	 */

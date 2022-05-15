@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 /**
  * Category Entity
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
@@ -25,23 +25,23 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 public class CategoryEntity implements Serializable {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Primary key
 	 */
 	@Id
 	@Column(name = "id")
 	private String id;
-	
+
 	/**
 	 * Category
 	 */
 	@Column(name = "name", nullable = false, length = 50)
 	private String name;
-	
+
 	/**
 	 * List of movies
 	 */
@@ -97,5 +97,5 @@ public class CategoryEntity implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
+
 }

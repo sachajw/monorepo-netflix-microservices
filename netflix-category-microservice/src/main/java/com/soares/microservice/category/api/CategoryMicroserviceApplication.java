@@ -15,7 +15,7 @@ public class CategoryMicroserviceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CategoryMicroserviceApplication.class, args);
 	}
-	
+
 	@Bean
 	public BCryptPasswordEncoder bCryptPasswordEncoder() {
 		return new BCryptPasswordEncoder();

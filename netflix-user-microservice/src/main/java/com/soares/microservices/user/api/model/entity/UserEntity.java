@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * User entity
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
@@ -15,26 +15,26 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class UserEntity implements Serializable {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * user UUID
 	 */
 	@Id
 	private String id;
-	
+
 	/**
 	 * First name
 	 */
 	private String firstName;
-	
+
 	/**
 	 * Last name
 	 */
 	private String lastName;
-	
+
 	/**
 	 * Email
 	 */
@@ -121,5 +121,5 @@ public class UserEntity implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
+
 }

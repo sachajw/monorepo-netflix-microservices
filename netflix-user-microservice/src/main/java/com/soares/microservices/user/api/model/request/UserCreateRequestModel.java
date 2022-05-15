@@ -6,24 +6,24 @@ import javax.validation.constraints.Size;
 
 /**
  * This class represents an user insert request
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
 public class UserCreateRequestModel {
-	
+
 	/**
 	 * First name
 	 */
 	@NotNull(message = "First name cannot be null")
 	private String firstName;
-	
+
 	/**
 	 * Last name
 	 */
 	@NotNull(message = "Last name cannot be null")
 	private String lastName;
-	
+
 	/**
 	 * Email
 	 */
@@ -37,7 +37,7 @@ public class UserCreateRequestModel {
 	@NotNull(message = "Password cannot be null")
 	@Size(min = 8, max = 16, message = "Password must be equal or grater than 8 characters and less or equal 16 characters")
 	private String password;
-	
+
 	/**
 	 * @return the firstName
 	 */
@@ -93,5 +93,5 @@ public class UserCreateRequestModel {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 }

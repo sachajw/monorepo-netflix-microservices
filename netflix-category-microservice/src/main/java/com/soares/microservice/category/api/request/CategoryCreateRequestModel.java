@@ -4,12 +4,12 @@ import javax.validation.constraints.NotNull;
 
 /**
  * This class represents a category insert request
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
 public class CategoryCreateRequestModel {
-	
+
 	/**
 	 * Category name
 	 */
@@ -29,5 +29,5 @@ public class CategoryCreateRequestModel {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 }

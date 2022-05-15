@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Data Transfer Object for Category
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
@@ -15,12 +15,12 @@ public class CategoryDTO {
 	 * Primary key
 	 */
 	private String id;
-	
+
 	/**
 	 * Category name
 	 */
 	private String name;
-	
+
 	/**
 	 * List of movies
 	 */
@@ -67,5 +67,5 @@ public class CategoryDTO {
 	public void setMovies(List<MovieDTO> movies) {
 		this.movies = movies;
 	}
-	
+
 }

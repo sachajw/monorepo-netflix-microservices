@@ -10,7 +10,7 @@ import javassist.NotFoundException;
 
 /**
  * Category service interface
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
@@ -23,7 +23,7 @@ public interface ICategoryService {
 	 * @return
 	 */
 	public CategoryDTO insert(CategoryDTO category);
-	
+
 	/**
 	 * Update a category
 	 * @param category
@@ -36,17 +36,17 @@ public interface ICategoryService {
 	 * @return
 	 */
 	public List<CategoryDTO> getAll();
-	
+
 	/**
 	 * Get an movie by id
 	 * @return
 	 */
 	public CategoryDTO findById(String id);
-	
+
 	/**
 	 * Delete a category
 	 * @param id
 	 */
 	public void delete(String id);
-	
+
 }

@@ -27,7 +27,7 @@ import com.soares.microservice.movie.api.service.IMovieService;
 
 /**
  * Movie Controller
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
@@ -40,7 +40,7 @@ public class MovieController {
 
 	/**
 	 * Save a movie
-	 * 
+	 *
 	 * @param movieRequest
 	 * @return {@link ResponseEntity}
 	 */
@@ -50,18 +50,18 @@ public class MovieController {
 		ModelMapper modelMapper = new ModelMapper();
 		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		MovieDTO movieDTO = modelMapper.map(movieRequest, MovieDTO.class);
-		
+
 		CategoryDTO categoryDTO = new CategoryDTO();
 		categoryDTO.setId(movieRequest.getCategoryId());
 		movieDTO.setCategory(categoryDTO);
-		
+
 		movieDTO = service.insert(movieDTO);
 		return ResponseEntity.status(HttpStatus.CREATED).body(movieDTO);
 	}
 
 	/**
 	 * Return a movie by id
-	 * 
+	 *
 	 * @param movieId
 	 * @return {@link ResponseEntity}
 	 */
@@ -74,7 +74,7 @@ public class MovieController {
 
 	/**
 	 * Return a movie by id
-	 * 
+	 *
 	 * @param movieId
 	 * @return {@link ResponseEntity}
 	 */
@@ -86,7 +86,7 @@ public class MovieController {
 
 	/**
 	 * Update a movie
-	 * 
+	 *
 	 * @return {@link ResponseEntity}
 	 */
 	@PutMapping(consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, produces = {
@@ -94,29 +94,29 @@ public class MovieController {
 	public ResponseEntity<MovieDTO> update(@Valid @RequestBody MovieUpdateRequestModel movieRequest) {
 		if(service.findById(movieRequest.getId()) == null)
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-		
+
 		ModelMapper modelMapper = new ModelMapper();
 		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		MovieDTO movieDTO = modelMapper.map(movieRequest, MovieDTO.class);
-		
+
 		CategoryDTO categoryDTO = new CategoryDTO();
 		categoryDTO.setId(movieRequest.getCategoryId());
 		movieDTO.setCategory(categoryDTO);
-		
+
 		movieDTO = service.update(movieDTO);
 		return ResponseEntity.status(HttpStatus.CREATED).body(movieDTO);
 	}
 
 	/**
 	 * Delete a movie
-	 * 
+	 *
 	 * @return {@link ResponseEntity}
 	 */
 	@DeleteMapping(path = "/{movieId}")
 	public ResponseEntity<Void> delete(@PathVariable String movieId) {
 		if(service.findById(movieId) == null)
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-		
+
 		service.delete(movieId);
 		return ResponseEntity.ok().build();
 	}

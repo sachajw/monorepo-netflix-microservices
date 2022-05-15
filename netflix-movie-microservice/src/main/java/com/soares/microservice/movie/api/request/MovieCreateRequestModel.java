@@ -4,12 +4,12 @@ import javax.validation.constraints.NotNull;
 
 /**
  * Movie request class for creation
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
 public class MovieCreateRequestModel {
-	
+
 	/**
 	 * Movie name
 	 */

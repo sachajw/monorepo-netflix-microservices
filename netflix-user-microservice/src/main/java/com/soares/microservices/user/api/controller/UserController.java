@@ -21,7 +21,7 @@ import com.soares.microservices.user.api.service.IUserService;
 
 /**
  * User controller
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
@@ -34,7 +34,7 @@ public class UserController {
 
 	/**
 	 * Create user
-	 * 
+	 *
 	 * @param userRequest
 	 * @return {@link ResponseEntity}
 	 */
@@ -44,7 +44,7 @@ public class UserController {
 		if(service.findByEmail(userRequest.getEmail()) != null) {
 			return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(null);
 		}
-		
+
 		ModelMapper modelMapper = new ModelMapper();
 		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
@@ -56,7 +56,7 @@ public class UserController {
 
 	/**
 	 * Get user by id
-	 * 
+	 *
 	 * @param id
 	 * @return {@link ResponseEntity}
 	 */

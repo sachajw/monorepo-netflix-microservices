@@ -6,7 +6,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 /**
  * Spring web security configuration
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
@@ -24,5 +24,5 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 			.and()
 			.httpBasic();
 	}
-	
+
 }

@@ -11,7 +11,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 
 /**
  * Spring web security configuration
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
@@ -20,15 +20,15 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
 	private final Environment env;
-	
+
 	@Autowired
 	public WebSecurity(Environment env) {
 		this.env = env;
 	}
-	
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
-		
+
 		http.csrf().disable();
 		http.headers().frameOptions().disable();
 		http.authorizeRequests()
@@ -37,9 +37,9 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.POST, env.getProperty("api.login.url.path")).permitAll()
 		.anyRequest().authenticated()
 		.and().addFilter(new AuthorizationFilter(authenticationManager(), env));
-		
+
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-		
+
 	}
-	
+
 }

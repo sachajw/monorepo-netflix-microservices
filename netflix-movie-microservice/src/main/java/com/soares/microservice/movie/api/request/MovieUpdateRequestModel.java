@@ -4,12 +4,12 @@ import javax.validation.constraints.NotNull;
 
 /**
  * Movie request class for update
- * 
+ *
  * @author Marcelo Soares <marceloh.web@gmail.com>
  *
  */
 public class MovieUpdateRequestModel extends MovieCreateRequestModel {
-	
+
 	/**
 	 * Primary key
 	 */
