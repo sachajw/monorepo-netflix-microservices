@@ -3,45 +3,80 @@ pipeline {
     stages {
         stage('Build Gateway') {
             agent { dockerfile true }
-        }
+            when {
+                changeset "**/gateway/*.*"
+                beforeAgent true
+            }
             steps {
-                sh 'entrypoint.sh'
+                dir('gateway')
+                  sh 'entrypoint.sh'
+                  sh '...'
         }
         stage('Build Category') {
             agent { dockerfile true }
+            when {
+                changeset "**/category/*.*"
+                beforeAgent true
         }
             steps {
+                dir('category')
                 sh 'entrypoint.sh'
+                sh '...'
         }
         stage('Build Config') {
             agent { dockerfile true }
+            when {
+                changeset "**/config/*.*"
+                beforeAgent true
         }
             steps {
+                dir('config')
                 sh 'entrypoint.sh'
+                SH '...'
         }
         stage('Build Data') {
             agent { dockerfile true }
+            when {
+                changeset "**/data/*.*"
+                beforeAgent true
         }
             steps {
+                dir('gateway')
                 sh 'entrypoint.sh'
+                sh '...'
         }
         stage('Build Movie') {
             agent { dockerfile true }
+            when {
+                changeset "**/movie/*.*"
+                beforeAgent true
         }
             steps {
+                dir('gateway')
                 sh 'entrypoint.sh'
+                sh '...'
         }
         stage('Build Service') {
             agent { dockerfile true }
+            when {
+                changeset "**/service/*.*"
+                beforeAgent true
         }
             steps {
+                dir('gateway')
                 sh 'entrypoint.sh'
+                sh '...'
         }
         stage('Build User') {
             agent { dockerfile true }
+            when {
+                changeset "**/user/*.*"
+                beforeAgent true
         }
             steps {
+                dir('gateway')
                 sh 'entrypoint.sh'
+                sh '...'
         }
     }
 }
