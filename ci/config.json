@@ -1,0 +1,60 @@
+pipeline {
+    agent none
+    stages {
+        stage('Gateway') {
+            agent { dockerfile true }
+            }
+            steps {
+                sh 'entrypoint.sh'
+            }
+        }
+        stage('Category') {
+            agent {
+            agent { dockerfile true }
+            }
+            steps {
+                sh 'entrypoint.sh'
+            }
+        }
+        stage('Config') {
+            agent {
+            agent { dockerfile true }
+            }
+            steps {
+                sh 'entrypoint.sh'
+            }
+        }
+        stage('Data') {
+            agent {
+            agent { dockerfile true }
+            }
+            steps {
+                sh 'entrypoint.sh'
+            }
+        }
+        stage('Movie') {
+            agent {
+            agent { dockerfile true }
+            }
+            steps {
+                sh 'entrypoint.sh'
+            }
+        }
+        stage('Service') {
+            agent {
+            agent { dockerfile true }
+            }
+            steps {
+                sh 'entrypoint.sh'
+            }
+        }
+        stage('User') {
+            agent {
+            agent { dockerfile true }
+            }
+            steps {
+                sh 'entrypoint.sh'
+            }
+        }
+    }
+}
