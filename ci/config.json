@@ -1,54 +1,47 @@
 pipeline {
     agent none
     stages {
-        stage('Gateway') {
+        stage('Build Gateway') {
             agent { dockerfile true }
-            }
-            steps {
-                sh 'entrypoint.sh'
-            }
         }
-        stage('Category') {
-            agent { dockerfile true }
-            }
             steps {
                 sh 'entrypoint.sh'
-            }
         }
-        stage('Config') {
+        stage('Build Category') {
             agent { dockerfile true }
-            }
-            steps {
-                sh 'entrypoint.sh'
-            }
         }
-        stage('Data') {
-            agent { dockerfile true }
-            }
             steps {
                 sh 'entrypoint.sh'
-            }
         }
-        stage('Movie') {
+        stage('Build Config') {
             agent { dockerfile true }
-            }
-            steps {
-                sh 'entrypoint.sh'
-            }
         }
-        stage('Service') {
-            agent { dockerfile true }
-            }
             steps {
                 sh 'entrypoint.sh'
-            }
         }
-        stage('User') {
+        stage('Build Data') {
             agent { dockerfile true }
-            }
+        }
             steps {
                 sh 'entrypoint.sh'
-            }
+        }
+        stage('Build Movie') {
+            agent { dockerfile true }
+        }
+            steps {
+                sh 'entrypoint.sh'
+        }
+        stage('Build Service') {
+            agent { dockerfile true }
+        }
+            steps {
+                sh 'entrypoint.sh'
+        }
+        stage('Build User') {
+            agent { dockerfile true }
+        }
+            steps {
+                sh 'entrypoint.sh'
         }
     }
 }
